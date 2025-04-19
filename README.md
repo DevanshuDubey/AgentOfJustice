@@ -57,3 +57,6 @@ The courtroom object orchestrates who speaks when and what kind of prompts are u
 
 ### 📄 `output/output.csv`
 - Output format:
+
+## How to run
+- Just run final.py to get output.csv
