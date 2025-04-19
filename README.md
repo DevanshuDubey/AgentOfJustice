@@ -50,11 +50,16 @@ trial progression:
 - 501 full-text case descriptions used as input
 - Each row is a real-world inspired legal scenario described in natural language
 
-### 📄 `data/cases.csv`
-- 100 sampled test cases for validation and benchmarking
+### 📄 `cases.csv`
+- 100 sampled test cases for validation
 
-### 📄 `output/output.csv`
-- Output format:
+### 📄 `output.csv`
+- Output format
+id, label
+1975_38 ,1
+1958_49,0
+etc.
+
 
 ## How to run
 - Just run final.py to get output.csv
