@@ -10,10 +10,8 @@ from agents.plaintiff import Plaintiff
 from core.trial_manager import TrialManager
 from dotenv import load_dotenv
 
-# Load environment variables from .env if available
 load_dotenv()
 
-# ✅ Optional: split long descriptions if needed (currently unused)
 def split_case_description(description, chunk_size=2000):
     words = description.split()
     num_chunks = math.ceil(len(words) / chunk_size)
@@ -24,12 +22,10 @@ def main():
     file_path = "cases.csv"
     output_file = "output.csv"
     
-    # ✅ Load data
     cases = pd.read_csv(file_path)
-    total_cases = min(100, len(cases))
-    print(f"\n🎯 Running courtroom simulation on {total_cases} cases...\n")
+    total_cases = len(cases)
+    print("\n🎯 Running courtroom simulation on 50 cases...\n")
 
-    # ✅ Setup Groq Client
     client = Groq(api_key=os.getenv("GROQ_API_KEY_78060"))
 
     results = []
@@ -41,7 +37,6 @@ def main():
             print(f"⚖️ Running case #{case_number}:")
             print(f"   📄 Description: {case_description[:100]}...")
 
-            # ✅ Agents
             prosecution = ProsecutionLawyer()
             defense = DefenseLawyer()
             judge = Judge()
@@ -62,7 +57,6 @@ def main():
                 witnesses=witnesses
             )
 
-            # ✅ Use LLM to summarize or enrich input if needed
             summary = client.chat.completions.create(
                 model="meta-llama/llama-4-scout-17b-16e-instruct",
                 messages=[
@@ -75,13 +69,11 @@ def main():
 
             summary_text = summary.choices[0].message.content.strip()
 
-            # ✅ Run courtroom simulation phases
             trial.run_opening_statements(summary_text)
             trial.run_witness_interrogation()
             trial.run_closing_statements()
             final_judgement = trial.run_judgement()
 
-            # ✅ Collect result
             results.append({
                 "label": final_judgement
             })
@@ -92,7 +84,6 @@ def main():
                 "judge_ruling": f"Error: {e}"
             })
 
-    # ✅ Save to CSV
     output_df = pd.DataFrame(results)
     output_df[id] = cases["id"]
     output_df.to_csv(output_file, index=False)
