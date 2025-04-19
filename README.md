@@ -26,8 +26,6 @@ trial progression:
 - **Closing Statements**
 - **Judge’s Final Verdict**
 
-The courtroom object orchestrates who speaks when and what kind of prompts are used at each phase.
-
 ---
 
 ### 3. **Simulation Engine**
