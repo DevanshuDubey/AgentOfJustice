@@ -18,7 +18,7 @@ Each agent stores its memory and uses structured prompts to generate contextual 
 ---
 
 ### 2. **Courtroom Sequence Manager**
-`Courtroom.py` handles trial progression:
+trial progression:
 - **Opening Statements**
 - **Argumentation Phase**
 - **Cross-Examination**
