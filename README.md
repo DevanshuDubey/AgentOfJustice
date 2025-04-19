@@ -47,8 +47,8 @@ trial progression:
 ## 🧪 Data
 
 ### 📄 `data/data.csv`
-- 501 full-text case descriptions used as input
-- Each row is a real-world inspired legal scenario described in natural language
+- 500 full-text case descriptions used as input
+- Each row is a real-world legal scenario described in natural language
 
 ### 📄 `cases.csv`
 - 100 sampled test cases for validation
