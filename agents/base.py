@@ -1,4 +1,4 @@
-# base_agent.py
+# base_agent
 import os
 from typing import List, Dict
 from dotenv import load_dotenv
