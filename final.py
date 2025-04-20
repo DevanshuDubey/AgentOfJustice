@@ -81,7 +81,7 @@ def main():
         except Exception as e:
             print(f"❌ Error in case {case_number}: {e}")
             results.append({
-                "judge_ruling": f"Error: {e}"
+                "label": "ERROR"
             })
 
     output_df = pd.DataFrame(results)
