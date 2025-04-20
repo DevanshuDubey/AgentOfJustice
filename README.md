@@ -18,15 +18,13 @@ Each agent stores its memory and uses structured prompts to generate contextual 
 ---
 
 ### 2. **Courtroom Sequence Manager**
-`Courtroom.py` handles trial progression:
+trial progression:
 - **Opening Statements**
 - **Argumentation Phase**
 - **Cross-Examination**
 - **Defendant & Witness Testimonies**
 - **Closing Statements**
 - **Judge’s Final Verdict**
-
-The courtroom object orchestrates who speaks when and what kind of prompts are used at each phase.
 
 ---
 
@@ -49,14 +47,19 @@ The courtroom object orchestrates who speaks when and what kind of prompts are u
 ## 🧪 Data
 
 ### 📄 `data/data.csv`
-- 501 full-text case descriptions used as input
-- Each row is a real-world inspired legal scenario described in natural language
+- 500 full-text case descriptions used as input
+- Each row is a real-world legal scenario described in natural language
 
-### 📄 `data/cases.csv`
-- 100 sampled test cases for validation and benchmarking
+### 📄 `cases.csv`
+- 100 sampled test cases for validation
 
-### 📄 `output/output.csv`
-- Output format:
+### 📄 `output.csv`
+- Output format
+id, label
+1975_38 ,1
+1958_49,0
+etc.
+
 
 ## How to run
 - Just run final.py to get output.csv
