@@ -89,4 +89,5 @@ class TrialManager:
         verdict = self.judge.respond(
             f"Court: Based on this case transcript, issue your final verdict:\n{summary}"
         )
+        print("========THE FINAL VERDICT OF THE CASE IS: ==========\n"+verdict)
         return verdict
